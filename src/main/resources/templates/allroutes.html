@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Routes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+<div th:include="fragments/navigation :: navigation"></div>
+<br><br><br><br>
+
+<div class="container">
+    <div class="panel ">
+        <div class="panel-heading" style="background-color: greenyellow">
+            <h4>Routes</h4>
+        </div>
+        <div class="panel-body" style="height: 600px;overflow-y: scroll;">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Id</th>
+                        <th style="width: 25%;">Origin</th>
+                        <th style="width: 25%;">Destination</th>
+                        <th style="width: 25%;">Distance ( Light yrs ) </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <div style="float:right;">
+                        <a class="btn btn-success" href="#" th:href="@{/interstellar/routes/create}"> Add </a>
+                    </div>
+                    <tr th:if="${routes.empty}">
+                        <td colspan="2"> Not found </td>
+                    </tr>
+                    <tr th:each="route : ${routes}">
+                        <td style="font-family: Arial;font-size: 12px"><span th:text="${route.routeId}"> Id </span></td>
+                        <td style="font-family: Arial;font-size: 12px"><span th:text="${route.planetOrigin}"> Origin </span></td>
+                        <td style="font-family: Arial;font-size: 12px"><span th:text="${route.planetDestination}"> Destination </span></td>
+                        <td style="font-family: Arial;font-size: 12px"><span th:text="${route.distance}"> Distance (Light yrs)</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

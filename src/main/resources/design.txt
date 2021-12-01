@@ -1,0 +1,10 @@
+Assumption
+------------
+1.) L' node is added
+2.) data.xlsx is shipped with application binary
+3.) H2 in-memory database used
+
+
+Improvement
+------------
+1.) Front-end can be improved

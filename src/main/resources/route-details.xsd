@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://discovery.co.za.interstellar/routes"
+           xmlns:tns="http://discovery.co.za.interstellar/routes" elementFormDefault="qualified">
+
+    <xs:element name="GetRoutesRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name= "originPlanet" type="xs:string"/>
+                <xs:element name= "destinationPlanet" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetRoutesDetailsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name= "RoutesDetails" type="tns:RouteDetails"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="RouteDetails">
+        <xs:sequence>
+            <xs:element name="planetOrigin" type="xs:string"/>
+            <xs:element name="planetDestination" type="xs:string"/>
+            <xs:element name="distance" type="xs:double"/>
+            <xs:element name="path" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,47 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Routes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+<div th:include="fragments/navigation :: navigation"></div>
+<br><br><br><br>
+<div class="container">
+    <div class="panel ">
+        <div class="panel-heading" style="background-color: greenyellow">
+            <h4>Add</h4>
+        </div>
+        <div class="panel-body">
+            <form action="#" class="form-horizontal" th:action="@{/interstellar/routes/save}" th:object="${routes}" method="post">
+                <fieldset>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Origin</th>
+                            <th>Destination</th>
+                            <th>Distance</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><input th:field="*{routeId}" required/></td>
+                            <td><input th:field="*{planetOrigin}" required/></td>
+                            <td><input th:field="*{planetDestination}" required/></td>
+                            <td><input th:field="*{distance}" required/></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div>
+                        <a class="btn btn-info" href="#" th:href="@{/interstellar/routes/showRoutes}"> Routes </a>
+                        <span class="pull-right">
+                            <input type="submit" id="submitRouteButton" class="btn btn-success" th:value="Save">
+                        </span>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

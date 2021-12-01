@@ -1,0 +1,40 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Shortest Path</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+<div th:include="fragments/navigation :: navigation"></div>
+<br><br><br><br>
+<div class="container">
+    <div class="panel">
+        <div class="panel-heading" style="background-color: greenyellow">
+            <h4>Shortest Path</h4>
+        </div>
+        <div class="panel-body">
+            <div>
+                <a class="btn btn-info" href="#" th:href="@{/interstellar}"> Home </a>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th style="width: 23%;">Origin</th>
+                        <th style="width: 23%;">Destination</th>
+                        <th style="width: 23%;">Distance</th>
+                        <th style="width: 31%;">Path</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td style="font-family: Arial;font-size: 12px"><span th:text="${route.planetOrigin}"> Origin </span></td>
+                    <td style="font-family: Arial;font-size: 12px"><span th:text="${route.planetDestination}"> Destination </span></td>
+                    <td style="font-family: Arial;font-size: 12px"><span th:text="${route.distance}"> Distance </span></td>
+                    <td style="font-family: Arial;font-size: 12px"><span th:text="${route.path}"> Path </span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

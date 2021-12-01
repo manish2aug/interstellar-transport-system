@@ -1,0 +1,40 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Find all routes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+<div th:include="fragments/navigation :: navigation"></div>
+<br><br><br><br>
+<div class="container">
+    <div class="panel">
+        <div class="panel-heading" style="background-color: greenyellow">
+            <h4>Find</h4>
+        </div>
+        <div class="panel-body">
+            <form action="#" class="form-horizontal" th:action="@{/interstellar/routes/shortestPathAll}" th:object="${planetrequest}" method="post">
+                <fieldset>
+                    <table class="table">
+                        <thead>
+
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Origin</td>
+                            <td><input th:field="*{planetOriginNode}" required/></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div>
+                        <span class="pull-right">
+                            <a class="btn btn-info" href="#" th:href="@{/interstellar/routes/showRoutes}"> Routes </a>
+                            <input type="submit" id="submitButton" class="btn btn-success" th:value="Find">
+                        </span>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
